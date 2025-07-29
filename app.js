@@ -3,7 +3,7 @@ let amigos = []
 
 function agregarAmigo() {
     const input = document.getElementById("amigo");
-    const nombre = input.ariaValueMax.trim();
+    const nombre = input.value.trim();
 
 
     if (nombre === "") {
@@ -27,7 +27,7 @@ function actualizarListaDeAmigos() {
 
     for (let i = 0; i < amigos.length; i++){
         const li = document.createElement("li");
-        li.textContent = amigos [li];
+        li.textContent = amigos[li];
         lista.appendChild(li);
     }
 }
@@ -44,5 +44,5 @@ function sortearAmigo() {
 
     const amigoSorteado = amigos[indiceAleatorio];
 
-    resultado.innerHTML = '<li>El amigo secreto es: <strong>$strong{amigoSorteado}</strong></li>';
+    resultado.innerHTML = '<li>El amigo secreto es: <strong>${amigoSorteado}</strong></li>';
 }
