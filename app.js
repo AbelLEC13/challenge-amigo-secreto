@@ -11,16 +11,38 @@ function agregarAmigo() {
         return;
     }
 
-amigos.push(nombre);
+    amigos.push(nombre);
 
-const lista = document.getElementById("listaAmigos");
-const nuevoElemento = document.createElement("li");
-nuevoElemento.textContent = nombre;
-lista.appendChild(nuevoElemento);
 
-input.value = "";
+    input.value = "";
+
+    actualizarListaDeAmigos();
 
 }
 
+function actualizarListaDeAmigos() {
+    const lista = document.getElementById("listaAmigos");
 
+    lista.innerHTML = "";
 
+    for (let i = 0; i < amigos.length; i++){
+        const li = document.createElement("li");
+        li.textContent = amigos [li];
+        lista.appendChild(li);
+    }
+}
+
+function sortearAmigo() {
+    const resultado = document.getElementById("resultado");
+
+    if (amigos.length === 0) {
+        resultado.innerHTML = "<li>Debes agregar almenos un amigo.</li>";
+        return;
+    }
+
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    resultado.innerHTML = '<li>El amigo secreto es: <strong>$strong{amigoSorteado}</strong></li>';
+}
