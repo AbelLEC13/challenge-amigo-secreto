@@ -27,7 +27,7 @@ function actualizarListaDeAmigos() {
 
     for (let i = 0; i < amigos.length; i++){
         const li = document.createElement("li");
-        li.textContent = amigos[li];
+        li.textContent = amigos[i];
         lista.appendChild(li);
     }
 }
